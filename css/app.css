@@ -37,4 +37,12 @@ h2{
 }
 #main-container .signup-box .btn-form{
   background: #7c4dff;
+  margin-bottom: 8%;
+}
+#main-container .call-to{
+  text-align: center;
+  margin: 0 auto;
+  background: #f3e5f5;
+  border-radius: 20px;
+  margin-top: 2%;
 }
