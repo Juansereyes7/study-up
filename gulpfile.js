@@ -1,6 +1,9 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
+var browserify = require ('browserify');
+var babel = require('babelify');
+var source = require('vinyl-source-stream')
 
 gulp.task('styles', function () {
   gulp
@@ -15,4 +18,15 @@ gulp.task('assets', function(){
     .pipe(gulp.dest('public'));
 })
 
-gulp.task('default', ['styles', 'assets']);
+gulp.task('script', function () {
+  gulp
+    browserify('./src/index.js')
+    .transform(babel)
+    .bundle()
+    .pipe(source('index.js'))
+    .pipe(rename('app.js'))
+    .pipe(gulp.dest('public'));
+
+})
+
+gulp.task('default', ['styles', 'assets', 'script']);
