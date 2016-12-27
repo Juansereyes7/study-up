@@ -18,6 +18,12 @@
   "homepage": "https://github.com/sbsreyes/study-up#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "materialize-css": "^0.97.8"
+    "materialize-css": "^0.97.8",
+    "pug": "^2.0.0-beta6"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.0.0"
   }
 }

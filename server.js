@@ -3,9 +3,23 @@ var app = express();
 
 var port = process.env.port || 3000;
 
+app.set('view engine', 'pug');
+app.use(express.static('public'));
+
+
+
 app.get('/', function (req, res){
-  res.send('hola mundo');
+  res.render('index');
 })
+
+
+
+
+
+
+
+
+
 
 app.listen(port, function (err) {
   if (err) {
