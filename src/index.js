@@ -1,5 +1,6 @@
 var page = require('page');
-require('./signup');
-require('./signin');
-require('./home');
+require('./home')
+require('./signup')
+require('./signin')
+
 page();

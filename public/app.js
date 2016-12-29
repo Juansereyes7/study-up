@@ -2529,32 +2529,16 @@ page();
 var yo = require('yo-yo');
 var landing = require('../landing');
 var signinForm = yo`
-    <div class="col m6">
-    <div class="signup-box">
-      <h1 class="study-up">Study-Up</h1>
-      <div class="section">
-        <h2>Regístrate para compartir todos tus trabajos con toda la Comunidad</h2>
-        <a class="waves-effect waves-light btn btn-fb hide-on-small-only">Iniciar Sesión con Facebook</a>
-        <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up">Iniciar Sesión</a>
-      </div>
-      <div class="signup-form">
-        <input type="text" name="user" placeholder="Nombre de Usuario">
-        <input type="password" name="password" placeholder="Contraseña">
-        <button type="submit" name="button" class="btn waves-light btn-form">Iniciar Sesión</button>
-      </div>
-    </div>
-    <div class="section call-to">
-      ¿No Tienes una Cuenta? <a href="signup">Regístrate</a>
-    </div>
-    </div>`;
+  <a href="signup">Regístrate</a>`;
 
 module.exports = landing(signinForm);
 
 },{"../landing":19,"yo-yo":14}],18:[function(require,module,exports){
 var page = require('page');
+require('./home');
 require('./signup');
 require('./signin');
-require('./home');
+
 page();
 
 },{"./home":16,"./signin":20,"./signup":22,"page":11}],19:[function(require,module,exports){
@@ -2581,13 +2565,37 @@ var empty = require('empty-element');
 var template = require('./template');
 page('/signin', function (ctx, next) {
   var main = document.getElementById('main-container');
+  empty(main).appendChild(template);
 });
 
 page();
 
 },{"./template":21,"empty-element":3,"page":11}],21:[function(require,module,exports){
-arguments[4][17][0].apply(exports,arguments)
-},{"../landing":19,"dup":17,"yo-yo":14}],22:[function(require,module,exports){
+var yo = require('yo-yo');
+var landing = require('../landing');
+var signinForm = yo`
+    <div class="col m6">
+    <div class="signup-box">
+      <h1 class="study-up">Study-Up</h1>
+      <div class="section">
+        <h2>Regístrate para compartir todos tus trabajos con toda la Comunidad</h2>
+        <a class="waves-effect waves-light btn btn-fb hide-on-small-only">Iniciar Sesión con Facebook</a>
+        <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up">Iniciar Sesión</a>
+      </div>
+      <div class="signup-form">
+        <input type="text" name="user" placeholder="Nombre de Usuario">
+        <input type="password" name="password" placeholder="Contraseña">
+        <button type="submit" name="button" class="btn waves-light btn-form">Iniciar Sesión</button>
+      </div>
+    </div>
+    <div class="section call-to">
+      ¿No Tienes una Cuenta? <a href="signup">Regístrate</a>
+    </div>
+    </div>`;
+
+module.exports = landing(signinForm);
+
+},{"../landing":19,"yo-yo":14}],22:[function(require,module,exports){
 var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
@@ -2619,7 +2627,7 @@ var signupForm = yo`
       </div>
     </div>
     <div class="section call-to">
-      ¿Tienes una Cuenta? <a href="signin">Entrar</a>
+      ¿Tienes una Cuenta? <a href="/signin">Entrar</a>
     </div>
     </div>`;
 

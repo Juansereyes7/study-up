@@ -18,6 +18,6 @@ var signinForm = yo`
     <div class="section call-to">
       ¿No Tienes una Cuenta? <a href="signup">Regístrate</a>
     </div>
-    </div>`
+    </div>`;
 
 module.exports= landing(signinForm);

@@ -18,7 +18,7 @@ var signupForm = yo`
       </div>
     </div>
     <div class="section call-to">
-      ¿Tienes una Cuenta? <a href="signin">Entrar</a>
+      ¿Tienes una Cuenta? <a href="/signin">Entrar</a>
     </div>
     </div>`
 
