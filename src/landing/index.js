@@ -8,7 +8,7 @@ module.exports = function landing(box) {
           <div class="col s12 m6 hide-on-small-only">
             <img src="landing2.png" alt="Study" class="logo">
           </div>
-        ${box}
+          ${box}
         </div>
       </div>
     </div>
