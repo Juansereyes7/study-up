@@ -2519,11 +2519,10 @@ var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
 page('/', function (ctx, next) {
+  $('title').html('Study - Home');
   var main = document.getElementById('main-container');
   empty(main).appendChild(template);
 });
-
-page();
 
 },{"./template":17,"empty-element":3,"page":11}],17:[function(require,module,exports){
 var yo = require('yo-yo');
@@ -2552,7 +2551,7 @@ module.exports = function landing(box) {
           <div class="col s12 m6 hide-on-small-only">
             <img src="landing2.png" alt="Study" class="logo">
           </div>
-        ${ box }
+          ${ box }
         </div>
       </div>
     </div>
@@ -2564,11 +2563,10 @@ var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
 page('/signin', function (ctx, next) {
+  $('title').html('Study - Signin');
   var main = document.getElementById('main-container');
   empty(main).appendChild(template);
 });
-
-page();
 
 },{"./template":21,"empty-element":3,"page":11}],21:[function(require,module,exports){
 var yo = require('yo-yo');
@@ -2600,11 +2598,10 @@ var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
 page('/signup', function (ctx, next) {
+  $('title').html('Study - Signup');
   var main = document.getElementById('main-container');
   empty(main).appendChild(template);
 });
-
-page();
 
 },{"./template":23,"empty-element":3,"page":11}],23:[function(require,module,exports){
 var yo = require('yo-yo');
