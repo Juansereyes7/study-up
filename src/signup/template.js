@@ -2,7 +2,7 @@ var yo = require('yo-yo');
 var landing = require('../landing');
 var signupForm = yo`
     <div class="col m6">
-    <div class="signup-box">
+    <div class="signup-box z-depth-1">
       <h1 class="study-up">Study-Up</h1>
       <div class="section">
         <h2>Regístrate para compartir todos tus trabajos con toda la Comunidad</h2>
@@ -17,7 +17,7 @@ var signupForm = yo`
         <button type="submit" name="button" class="btn waves-light btn-form">Regístrate</button>
       </div>
     </div>
-    <div class="section call-to">
+    <div class="section call-to z-depth-1">
       ¿Tienes una Cuenta? <a href="/signin">Entrar</a>
     </div>
     </div>`
