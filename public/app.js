@@ -2530,7 +2530,7 @@ page('/', function (ctx, next) {
 },{"./template":17,"empty-element":3,"page":11}],17:[function(require,module,exports){
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral(['\n  <div>\n      ', '\n  </div>'], ['\n  <div>\n      ', '\n  </div>']);
+var _templateObject = _taggedTemplateLiteral([' <div class= "template-home">\n    ', '\n    </div>\n  '], [' <div class= "template-home">\n    ', '\n    </div>\n  ']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -2539,10 +2539,10 @@ var layout = require('../layout');
 var picture = require('../picture-card');
 
 module.exports = function (pictures) {
-  var el = yo(_templateObject, pictures.map(function (pic) {
+  var element = yo(_templateObject, pictures.map(function (pic) {
     return picture;
   }));
-  return layout(el);
+  return layout(element);
 };
 
 },{"../layout":20,"../picture-card":21,"yo-yo":14}],18:[function(require,module,exports){
