@@ -7,7 +7,7 @@ var signinForm = yo`
       <div class="section">
         <h2>Regístrate para compartir todos tus trabajos con toda la Comunidad</h2>
         <a class="waves-effect waves-light btn btn-fb hide-on-small-only">Iniciar Sesión con Facebook</a>
-        <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up">Iniciar Sesión</a>
+        <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up"><i class="fa fa-facebook-official" aria-hidden="true"></i> Iniciar Sesión</a>
       </div>
       <div class="signup-form">
         <input type="text" name="user" placeholder="Nombre de Usuario">

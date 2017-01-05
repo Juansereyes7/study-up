@@ -4,5 +4,8 @@ var template = require('./template');
 page('/', function (ctx, next) {
   $('title').html('Study - Home');
   var main = document.getElementById('main-container');
-  empty(main).appendChild(template);
+  var pictures =[
+    1,2,3,4
+  ];
+  empty(main).appendChild(template(pictures));
 });
