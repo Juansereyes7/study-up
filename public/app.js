@@ -2523,14 +2523,30 @@ var template = require('./template');
 page('/', function (ctx, next) {
   $('title').html('Study - Home');
   var main = document.getElementById('main-container');
-  var pictures = [1, 2, 3, 4];
+  var pictures = [{
+    users: {
+      username: 'sbsreyes',
+      avatar: 'https://fb-s-c-a.akamaihd.net/h-ak-xtf1/v/t1.0-9/14064101_10209902057526015_155760393346624290_n.jpg?oh=7c2683e4658fefc6e29b0c3df9ed7d59&oe=58DB1F18&__gda__=1494993831_4256b0f1658b97d228dc78794f3633dc'
+    },
+    url: 'office.jpg',
+    likes: 1024,
+    liked: true
+  }, {
+    users: {
+      username: 'sbsreyes',
+      avatar: 'https://fb-s-c-a.akamaihd.net/h-ak-xtf1/v/t1.0-9/14064101_10209902057526015_155760393346624290_n.jpg?oh=7c2683e4658fefc6e29b0c3df9ed7d59&oe=58DB1F18&__gda__=1494993831_4256b0f1658b97d228dc78794f3633dc'
+    },
+    url: 'office.jpg',
+    likes: 1024,
+    liked: true
+  }];
   empty(main).appendChild(template(pictures));
 });
 
 },{"./template":17,"empty-element":3,"page":11}],17:[function(require,module,exports){
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral([' <div class= "template-home">\n    ', '\n    </div>\n  '], [' <div class= "template-home">\n    ', '\n    </div>\n  ']);
+var _templateObject = _taggedTemplateLiteral(['\n  <div class="pictures">\n    ', '\n  </div>\n  '], ['\n  <div class="pictures">\n    ', '\n  </div>\n  ']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -2540,7 +2556,7 @@ var picture = require('../picture-card');
 
 module.exports = function (pictures) {
   var element = yo(_templateObject, pictures.map(function (pic) {
-    return picture;
+    return picture(pic);
   }));
   return layout(element);
 };
@@ -2571,7 +2587,7 @@ module.exports = function landing(box) {
 },{"yo-yo":14}],20:[function(require,module,exports){
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral([' <div>\n  <header id="header">\n    <nav>\n      <div class="container">\n        <div class="nav-wrapper">\n          <a href="home.html" class="brand-logo"><img src="logo.png" alt="logo de study-up" width="110px"></a>\n          <ul id="nav-mobile" class="right hide-on-med-and-down">\n            <span class="lista">\n              <li><a href="sass.html">Sass</a></li>\n              <li><a href="badges.html">Components</a></li>\n              <li><a href="collapsible.html">JavaScript</a></li>\n            </span>\n          </ul>\n        </div>\n      </div>\n   </nav>\n  </header>\n  <section>\n    <div class="container">\n      ', '\n    </div>\n  </section>\n  </div>'], [' <div>\n  <header id="header">\n    <nav>\n      <div class="container">\n        <div class="nav-wrapper">\n          <a href="home.html" class="brand-logo"><img src="logo.png" alt="logo de study-up" width="110px"></a>\n          <ul id="nav-mobile" class="right hide-on-med-and-down">\n            <span class="lista">\n              <li><a href="sass.html">Sass</a></li>\n              <li><a href="badges.html">Components</a></li>\n              <li><a href="collapsible.html">JavaScript</a></li>\n            </span>\n          </ul>\n        </div>\n      </div>\n   </nav>\n  </header>\n  <section>\n    <div class="container">\n      ', '\n    </div>\n  </section>\n  </div>']);
+var _templateObject = _taggedTemplateLiteral([' <div>\n  <header id="header">\n    <nav>\n      <div class="container">\n        <div class="nav-wrapper">\n          <a href="/" class="brand-logo"><img src="logo.png" alt="logo de study-up" width="110px"></a>\n          <ul id="nav-mobile" class="right hide-on-med-and-down">\n            <span class="lista">\n              <li><a href="sass.html">Sass</a></li>\n              <li><a href="badges.html">Components</a></li>\n              <li><a href="collapsible.html">JavaScript</a></li>\n            </span>\n          </ul>\n        </div>\n      </div>\n   </nav>\n  </header>\n  <section>\n    <div class="container">\n      ', '\n    </div>\n  </section>\n  </div>'], [' <div>\n  <header id="header">\n    <nav>\n      <div class="container">\n        <div class="nav-wrapper">\n          <a href="/" class="brand-logo"><img src="logo.png" alt="logo de study-up" width="110px"></a>\n          <ul id="nav-mobile" class="right hide-on-med-and-down">\n            <span class="lista">\n              <li><a href="sass.html">Sass</a></li>\n              <li><a href="badges.html">Components</a></li>\n              <li><a href="collapsible.html">JavaScript</a></li>\n            </span>\n          </ul>\n        </div>\n      </div>\n   </nav>\n  </header>\n  <section>\n    <div class="container">\n      ', '\n    </div>\n  </section>\n  </div>']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -2590,7 +2606,9 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 var yo = require('yo-yo');
 
-module.exports = yo(_templateObject);
+module.exports = function (pic) {
+  return yo(_templateObject);
+};
 
 },{"yo-yo":14}],22:[function(require,module,exports){
 'use strict';

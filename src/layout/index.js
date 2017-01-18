@@ -6,7 +6,7 @@ module.exports = function layout(content) {
     <nav>
       <div class="container">
         <div class="nav-wrapper">
-          <a href="home.html" class="brand-logo"><img src="logo.png" alt="logo de study-up" width="110px"></a>
+          <a href="/" class="brand-logo"><img src="logo.png" alt="logo de study-up" width="110px"></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <span class="lista">
               <li><a href="sass.html">Sass</a></li>

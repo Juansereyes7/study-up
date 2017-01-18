@@ -1,6 +1,7 @@
 var yo = require('yo-yo');
 
-module.exports = yo`
+module.exports = function(pic){
+  return yo`
 <div class="row">
   <div class="col s12 l8 offset-l2">
     <div class="card">
@@ -13,4 +14,4 @@ module.exports = yo`
       </div>
     </div>
   </div>
-  </div>`;
+  </div>`;}
