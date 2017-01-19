@@ -12,7 +12,7 @@ page('/', function (ctx, next) {
       },
         url:'office.jpg',
         likes: 10,
-        liked: true
+        liked: false
     },
     {
       user:{

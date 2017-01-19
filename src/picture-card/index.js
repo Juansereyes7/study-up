@@ -8,7 +8,7 @@ module.exports = function pictureCard(pic){
     <div class="col s12 l8 offset-l2">
       <div class="card ${picture.liked ? 'liked' : ''}">
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="${pic.url}">
+          <img class="activator" src="${picture.url}">
         </div>
         <div class="card-content">
           <a href="${picture.user.username}" class="card-title">
@@ -17,29 +17,22 @@ module.exports = function pictureCard(pic){
           </a>
           <small class=" right time">Hace 1 día</small>
           <p>
-          <a class="left" href="#" onclick=${like}><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-          <a class="left" href="#" onclick=${dislike}><i class="fa fa-heart" aria-hidden="true"></i></a>
+          <a class="left" href="#" onclick=${like.bind(null, true)}><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+          <a class="left" href="#" onclick=${like.bind(null, false)}><i class="fa fa-heart" aria-hidden="true"></i></a>
           <span class="left likes">${picture.likes} Me gusta</span>
           </p>
         </div>
       </div>
     </div>
-    </div>`
+    </div>`;
   }
-function like(){
-  pic.like = true;
-  pic.likes++;
-  var newEl = render(pic);
-  yo.update(el, newEl);
-  return false;
-}
-function dislike(){
-  pic.like = false;
-  pic.likes--;
-  var newEl = render(pic);
-  yo.update(el, newEl);
-  return false;
-}
-el = render(pic);
-return el;
+  function like(liked) {
+    pic.like = liked;
+    pic.likes += liked ? 1 : -1;
+    var newEl = render(pic);
+    yo.update(el, newEl);
+    return false;
+  }
+  el = render(pic);
+  return el
 }

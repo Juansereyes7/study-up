@@ -2530,7 +2530,7 @@ page('/', function (ctx, next) {
     },
     url: 'office.jpg',
     likes: 10,
-    liked: true
+    liked: false
   }, {
     user: {
       username: 'sbsreyes',
@@ -2617,18 +2617,11 @@ var yo = require('yo-yo');
 module.exports = function pictureCard(pic) {
   var el;
   function render(picture) {
-    return yo(_templateObject, picture.liked ? 'liked' : '', pic.url, picture.user.username, picture.user.avatar, picture.user.username, like, dislike, picture.likes);
+    return yo(_templateObject, picture.liked ? 'liked' : '', picture.url, picture.user.username, picture.user.avatar, picture.user.username, like.bind(null, true), like.bind(null, false), picture.likes);
   }
-  function like() {
-    pic.like = true;
-    pic.likes++;
-    var newEl = render(pic);
-    yo.update(el, newEl);
-    return false;
-  }
-  function dislike() {
-    pic.like = false;
-    pic.likes--;
+  function like(liked) {
+    pic.like = liked;
+    pic.likes += liked ? 1 : -1;
     var newEl = render(pic);
     yo.update(el, newEl);
     return false;
