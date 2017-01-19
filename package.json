@@ -4,7 +4,8 @@
   "description": "Study-up es una plataforma Online en la cual puedes compartir tus trabajos y desarrollos con la comunidad",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build":"gulp",
+    "start":"gulp watch & node server"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.8.0"
   }
 }
