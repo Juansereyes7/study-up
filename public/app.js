@@ -2524,20 +2524,20 @@ page('/', function (ctx, next) {
   $('title').html('Study - Home');
   var main = document.getElementById('main-container');
   var pictures = [{
-    users: {
+    user: {
       username: 'sbsreyes',
       avatar: 'https://fb-s-c-a.akamaihd.net/h-ak-xtf1/v/t1.0-9/14064101_10209902057526015_155760393346624290_n.jpg?oh=7c2683e4658fefc6e29b0c3df9ed7d59&oe=58DB1F18&__gda__=1494993831_4256b0f1658b97d228dc78794f3633dc'
     },
     url: 'office.jpg',
-    likes: 1024,
+    likes: 10,
     liked: true
   }, {
-    users: {
+    user: {
       username: 'sbsreyes',
       avatar: 'https://fb-s-c-a.akamaihd.net/h-ak-xtf1/v/t1.0-9/14064101_10209902057526015_155760393346624290_n.jpg?oh=7c2683e4658fefc6e29b0c3df9ed7d59&oe=58DB1F18&__gda__=1494993831_4256b0f1658b97d228dc78794f3633dc'
     },
     url: 'office.jpg',
-    likes: 1024,
+    likes: 2,
     liked: true
   }];
   empty(main).appendChild(template(pictures));
@@ -2546,7 +2546,7 @@ page('/', function (ctx, next) {
 },{"./template":17,"empty-element":3,"page":11}],17:[function(require,module,exports){
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral(['\n  <div class="pictures">\n    ', '\n  </div>\n  '], ['\n  <div class="pictures">\n    ', '\n  </div>\n  ']);
+var _templateObject = _taggedTemplateLiteral(['\n  <div class="pictures">\n    ', '\n  </div>'], ['\n  <div class="pictures">\n    ', '\n  </div>']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -2600,14 +2600,14 @@ module.exports = function layout(content) {
 },{"yo-yo":14}],21:[function(require,module,exports){
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral(['\n<div class="row">\n  <div class="col s12 l8 offset-l2">\n    <div class="card">\n      <div class="card-image waves-effect waves-block waves-light">\n        <img class="activator" src="office.jpg">\n      </div>\n      <div class="card-content">\n        <span class="card-title grey-text text-darken-4">Card Title<i class=" right">more_vert</i></span>\n        <p><a href="#">This is a link</a></p>\n      </div>\n    </div>\n  </div>\n  </div>'], ['\n<div class="row">\n  <div class="col s12 l8 offset-l2">\n    <div class="card">\n      <div class="card-image waves-effect waves-block waves-light">\n        <img class="activator" src="office.jpg">\n      </div>\n      <div class="card-content">\n        <span class="card-title grey-text text-darken-4">Card Title<i class=" right">more_vert</i></span>\n        <p><a href="#">This is a link</a></p>\n      </div>\n    </div>\n  </div>\n  </div>']);
+var _templateObject = _taggedTemplateLiteral(['\n<div class="row">\n  <div class="col s12 l8 offset-l2">\n    <div class="card">\n      <div class="card-image waves-effect waves-block waves-light">\n        <img class="activator" src="', '">\n      </div>\n      <div class="card-content">\n        <a href="', '" class="card-title">\n        <img src="', '" class="avatar" />\n        <span class="username">', '</span>\n        </a>\n        <small class=" right time">Hace 1 d\xEDa</small>\n        <p>\n        <a class="left" href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>\n        <span class="left likes">', ' Me gusta</span>\n        </p>\n      </div>\n    </div>\n  </div>\n  </div>'], ['\n<div class="row">\n  <div class="col s12 l8 offset-l2">\n    <div class="card">\n      <div class="card-image waves-effect waves-block waves-light">\n        <img class="activator" src="', '">\n      </div>\n      <div class="card-content">\n        <a href="', '" class="card-title">\n        <img src="', '" class="avatar" />\n        <span class="username">', '</span>\n        </a>\n        <small class=" right time">Hace 1 d\xEDa</small>\n        <p>\n        <a class="left" href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>\n        <span class="left likes">', ' Me gusta</span>\n        </p>\n      </div>\n    </div>\n  </div>\n  </div>']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
 module.exports = function (pic) {
-  return yo(_templateObject);
+  return yo(_templateObject, pic.url, pic.user.username, pic.user.avatar, pic.user.username, pic.likes);
 };
 
 },{"yo-yo":14}],22:[function(require,module,exports){
