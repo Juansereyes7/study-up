@@ -89,7 +89,7 @@ $avatar-size:48px;
 }
 .card.liked {
   .fa-heart {
-    display: block;
+    display: inline-block;
   }
   .fa-heart-o {
     display: none;

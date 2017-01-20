@@ -12,7 +12,8 @@ page('/', function (ctx, next) {
       },
         url:'office.jpg',
         likes: 10,
-        liked: false
+        liked: false,
+        createAT: new Date()
     },
     {
       user:{
@@ -21,8 +22,9 @@ page('/', function (ctx, next) {
       },
         url:'office.jpg',
         likes: 2,
-        liked: true
+        liked: true,
+        createAT: new Date().setDate(new Date().getDate()-10)
     }
-  ]
+  ];
   empty(main).appendChild(template(pictures));
 });

@@ -6503,7 +6503,7 @@ h2 {
   display: none; }
 
 .card.liked .fa-heart {
-  display: block; }
+  display: inline-block; }
 
 .card.liked .fa-heart-o {
   display: none; }
