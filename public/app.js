@@ -9649,7 +9649,7 @@ var locale = es;
 module.exports = {
   message: function message(text, opts) {
     opts = opts || {};
-    var msg = new IntlMessageFormat(MESSAGES[locale][text], locale);
+    var msg = new IntlMessageFormat(MESSAGES[text][es], es, null);
     return msg.format(opts);
   },
   date: new IntlRelativeFormat('locale')
