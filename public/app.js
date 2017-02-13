@@ -9647,7 +9647,11 @@ var locale = localStorage.locale || 'es';
 module.exports = {
   message: function message(text, opts) {
     opts = opts || {};
+<<<<<<< HEAD
     var msg = new IntlMessageFormat(MESSAGES[locale][text], locale, null);
+=======
+    var msg = new IntlMessageFormat(MESSAGES[text][es], es, null);
+>>>>>>> 06591aea97e048ebc9ae3e7bac215d2f8b12fb06
     return msg.format(opts);
   },
   date: new IntlRelativeFormat(locale)
