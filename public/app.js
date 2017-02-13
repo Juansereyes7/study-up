@@ -9635,24 +9635,22 @@ var IntlMessageFormat = require('intl-messageformat');
 require('intl-relativeformat/dist/locale-data/en.js');
 require('intl-relativeformat/dist/locale-data/es.js');
 
-var es;
-var en;
-es = require('./es.js');
-en = require('./en-US');
+var es = require('./es');
+var en = require('./en-US');
 
 var MESSAGES = {};
 MESSAGES.es = es;
 MESSAGES['en-US'] = en;
 
-var locale = es;
+var locale = localStorage.locale || 'es';
 
 module.exports = {
   message: function message(text, opts) {
     opts = opts || {};
-    var msg = new IntlMessageFormat(MESSAGES[locale][text], locale);
+    var msg = new IntlMessageFormat(MESSAGES[locale][text], locale, null);
     return msg.format(opts);
   },
-  date: new IntlRelativeFormat('locale')
+  date: new IntlRelativeFormat(locale)
 };
 
-},{"./en-US":47,"./es.js":48,"intl":25,"intl-messageformat":10,"intl-relativeformat":19,"intl-relativeformat/dist/locale-data/en.js":17,"intl-relativeformat/dist/locale-data/es.js":18,"intl/locale-data/jsonp/en-US.js":27,"intl/locale-data/jsonp/es.js":28}]},{},[39]);
+},{"./en-US":47,"./es":48,"intl":25,"intl-messageformat":10,"intl-relativeformat":19,"intl-relativeformat/dist/locale-data/en.js":17,"intl-relativeformat/dist/locale-data/es.js":18,"intl/locale-data/jsonp/en-US.js":27,"intl/locale-data/jsonp/es.js":28}]},{},[39]);
